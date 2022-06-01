@@ -1,0 +1,81 @@
+#ifndef __TOOLS_H_
+#define __TOOLS_H_
+
+#include <stdbool.h>
+
+#define MAXOPERATION 6
+#define MAXMAQUINAS 7
+#define MAXTEMPO 60
+#define M 7
+#define T 100
+// este ficheiro serve para fazer as assinaturas
+//  entre os ficheiros
+// este ficheiro so leva as assinaturas nada mais de logica
+
+struct Job;
+struct Operation;
+struct CelulaPlano;
+
+
+
+/**
+ * .
+ */
+typedef struct CelulaPlano {
+    int codJob;
+    int codOper;
+    int duracao;    //para simplificar trabalha-se com valorees temporais inteiros
+}CelulaPlano;
+
+
+CelulaPlano Plano[M][T];
+bool Ocupa(int job, int oper, int maq, int t);
+
+typedef struct jp{
+    int id;
+    int operacao[7];
+    int sizeOP;
+    struct jp *seguinte;
+} Job;
+
+
+typedef struct op{
+    int id;
+    int maquina[MAXMAQUINAS];
+    int tempo[MAXTEMPO];
+    int sizeMT;
+    struct op *seguinte;
+} Operation;
+
+//assinaturas
+
+//JOBS
+Job *inserirJobs(Job *jp, int id, int operacao[MAXOPERATION],int size);
+Job *removerJobs(Job *jp,Operation *op, int id);
+Job *insOpJp(Job * jp, int idOp , int idJp);
+Job* procuraJob(Job* jp, int id);
+Job *rmOpJp(Job * jp,int idOp,int idJp );
+void listarJobs(Job *jp);
+int quantidadeJobs(Job *jp);
+void guardarJobs(Job *jp);
+void medMinJob(Job *jp,Operation *op);
+void medMaxJob(Job *jp,Operation *op);
+
+
+//OPERAÇÔES
+Operation *inserirOperacoes(Operation *op, int id, int maq[MAXMAQUINAS], int temp[MAXTEMPO],int size);
+Operation* procuraOperacoes(Operation* op, int id);
+Operation* removerOperacoes(Operation *op, int id);
+Operation* alteraOperacao(Operation* op, int id,int* maq,int* temp, int size);
+void listarOperations(Operation *op);
+int quantidadeOperacoes(Operation * op);
+int minOperacao(Operation *op, int id);
+int maxOperacao(Operation *op, int id);
+int procuraOperacoesInt(Operation* op, int id);
+
+//OUTROS
+int menu();
+Operation* pullFicheiro(Operation *op, int idCont);
+void saveFicheiro(Job *jp,Operation *op);
+
+#endif
