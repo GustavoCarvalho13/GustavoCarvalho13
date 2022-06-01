@@ -8,8 +8,7 @@
 #define MAXTEMPO 60
 #define M 7
 #define T 100
-// este ficheiro serve para fazer as assinaturas
-//  entre os ficheiros
+// este ficheiro serve para fazer as assinaturas entre os ficheiros
 // este ficheiro so leva as assinaturas nada mais de logica
 
 struct Job;
@@ -18,13 +17,11 @@ struct CelulaPlano;
 
 
 
-/**
- * .
- */
+
 typedef struct CelulaPlano {
     int codJob;
     int codOper;
-    int duracao;    //para simplificar trabalha-se com valorees temporais inteiros
+    int duracao;    //trabalha-se com valorees temporais inteiros para simplificar
 }CelulaPlano;
 
 

@@ -1,0 +1,83 @@
+\hypertarget{header_8h_source}{}\doxysection{header.\+h}
+\mbox{\hyperlink{header_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_\_TOOLS\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_\_TOOLS\_H\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define MAXOPERATION 6}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define MAXMAQUINAS 7}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define MAXTEMPO 60}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define M 7}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define T 100}}
+\DoxyCodeLine{11 \textcolor{comment}{// este ficheiro serve para fazer as assinaturas}}
+\DoxyCodeLine{12 \textcolor{comment}{//  entre os ficheiros}}
+\DoxyCodeLine{13 \textcolor{comment}{// este ficheiro so leva as assinaturas nada mais de logica}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{struct }\mbox{\hyperlink{structjp}{Job}};}
+\DoxyCodeLine{16 \textcolor{keyword}{struct }\mbox{\hyperlink{structop}{Operation}};}
+\DoxyCodeLine{17 \textcolor{keyword}{struct }\mbox{\hyperlink{structCelulaPlano}{CelulaPlano}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{24 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structCelulaPlano}{CelulaPlano}} \{}
+\DoxyCodeLine{25     \textcolor{keywordtype}{int} \mbox{\hyperlink{structCelulaPlano_a9eaa12fba5e001b31c507a38d95c5579}{codJob}};}
+\DoxyCodeLine{26     \textcolor{keywordtype}{int} \mbox{\hyperlink{structCelulaPlano_a2e3329a4c9124867570ce1eeff8397a8}{codOper}};}
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} \mbox{\hyperlink{structCelulaPlano_aa31355b3f171d49066df2c5b36c3ddde}{duracao}};    \textcolor{comment}{//para simplificar trabalha-\/se com valorees temporais inteiros}}
+\DoxyCodeLine{28 \}\mbox{\hyperlink{header_8h_a186c32c2fb1704fa3497711ec1f2049e}{CelulaPlano}};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \mbox{\hyperlink{structCelulaPlano}{CelulaPlano}} \mbox{\hyperlink{header_8h_a706f59fbb1fb5a8fa369c93cf68cb82e}{Plano}}[\mbox{\hyperlink{header_8h_a52037c938e3c1b126c6277da5ca689d0}{M}}][\mbox{\hyperlink{header_8h_a0acb682b8260ab1c60b918599864e2e5}{T}}];}
+\DoxyCodeLine{32 \textcolor{keywordtype}{bool} \mbox{\hyperlink{header_8h_ae7c173a37e0c2f328eb18a711a06eaaf}{Ocupa}}(\textcolor{keywordtype}{int} job, \textcolor{keywordtype}{int} oper, \textcolor{keywordtype}{int} maq, \textcolor{keywordtype}{int} t);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structjp}{jp}}\{}
+\DoxyCodeLine{35     \textcolor{keywordtype}{int} \mbox{\hyperlink{structjp_a3eb7e5dff937cefcc82978bd229bf497}{id}};}
+\DoxyCodeLine{36     \textcolor{keywordtype}{int} \mbox{\hyperlink{structjp_a61603334d31c0cfc3fbc7b7ae73b697a}{operacao}}[7];}
+\DoxyCodeLine{37     \textcolor{keywordtype}{int} \mbox{\hyperlink{structjp_a2e58910bbb6c83108fd88f13a932a936}{sizeOP}};}
+\DoxyCodeLine{38     \textcolor{keyword}{struct }\mbox{\hyperlink{structjp}{jp}} *\mbox{\hyperlink{structjp_a93d9004944e1c6ab7aea80ab690aba8d}{seguinte}};}
+\DoxyCodeLine{39 \} \mbox{\hyperlink{header_8h_a3a38bf6b9eaffef2c5c1429373671189}{Job}};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structop}{op}}\{}
+\DoxyCodeLine{43     \textcolor{keywordtype}{int} \mbox{\hyperlink{structop_afb05f4fdb1eb524519d1f4089d7a69f1}{id}};}
+\DoxyCodeLine{44     \textcolor{keywordtype}{int} \mbox{\hyperlink{structop_a1f91135c7643f55bd30603aff05ea794}{maquina}}[\mbox{\hyperlink{header_8h_ab9c292ffc3422a0d77b525de858ee0ba}{MAXMAQUINAS}}];}
+\DoxyCodeLine{45     \textcolor{keywordtype}{int} \mbox{\hyperlink{structop_a59021b93a989b5d89ecc89cd7913f6a3}{tempo}}[\mbox{\hyperlink{header_8h_ad246bdcf9a9f0000da4f6bc9b0e5d083}{MAXTEMPO}}];}
+\DoxyCodeLine{46     \textcolor{keywordtype}{int} \mbox{\hyperlink{structop_a4562dccd5d5b023ed72bcd850a718450}{sizeMT}};}
+\DoxyCodeLine{47     \textcolor{keyword}{struct }\mbox{\hyperlink{structop}{op}} *\mbox{\hyperlink{structop_adf4bc40b0a969c8b730f3d93e2e982ba}{seguinte}};}
+\DoxyCodeLine{48 \} \mbox{\hyperlink{header_8h_aae5c0fd795897a19489bc101f3b6db6f}{Operation}};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{comment}{//assinaturas}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{comment}{//JOBS}}
+\DoxyCodeLine{53 \mbox{\hyperlink{structjp}{Job}} *\mbox{\hyperlink{header_8h_a2a1a51869d7a427f805ba4ae535c70ea}{inserirJobs}}(\mbox{\hyperlink{structjp}{Job}} *\mbox{\hyperlink{structjp}{jp}}, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{int} operacao[\mbox{\hyperlink{header_8h_a05791b18ed66ec8ede7771a432b2d8b8}{MAXOPERATION}}],\textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{54 \mbox{\hyperlink{structjp}{Job}} *\mbox{\hyperlink{header_8h_add781854c51b668e577da13fc0a38600}{removerJobs}}(\mbox{\hyperlink{structjp}{Job}} *\mbox{\hyperlink{structjp}{jp}},\mbox{\hyperlink{structop}{Operation}} *\mbox{\hyperlink{structop}{op}}, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{55 \mbox{\hyperlink{structjp}{Job}} *\mbox{\hyperlink{header_8h_a14606ca3a72133ff38e6765c6c9b9f34}{insOpJp}}(\mbox{\hyperlink{structjp}{Job}} * \mbox{\hyperlink{structjp}{jp}}, \textcolor{keywordtype}{int} idOp , \textcolor{keywordtype}{int} idJp);}
+\DoxyCodeLine{56 \mbox{\hyperlink{structjp}{Job}}* \mbox{\hyperlink{header_8h_a4e1268552c5898fd9c0bbf7515636ee0}{procuraJob}}(\mbox{\hyperlink{structjp}{Job}}* \mbox{\hyperlink{structjp}{jp}}, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{57 \mbox{\hyperlink{structjp}{Job}} *\mbox{\hyperlink{header_8h_a86d31933fd837575fcab167a91658d76}{rmOpJp}}(\mbox{\hyperlink{structjp}{Job}} * \mbox{\hyperlink{structjp}{jp}},\textcolor{keywordtype}{int} idOp,\textcolor{keywordtype}{int} idJp );}
+\DoxyCodeLine{58 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_aab58115d44565ee27962c8694e010f0c}{listarJobs}}(\mbox{\hyperlink{structjp}{Job}} *\mbox{\hyperlink{structjp}{jp}});}
+\DoxyCodeLine{59 \textcolor{keywordtype}{int} \mbox{\hyperlink{header_8h_a3bcae5bb1a95d536f69b8a013ac83d34}{quantidadeJobs}}(\mbox{\hyperlink{structjp}{Job}} *\mbox{\hyperlink{structjp}{jp}});}
+\DoxyCodeLine{60 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a29616a9d3a81d1e5045ef3027e4c9d7c}{guardarJobs}}(\mbox{\hyperlink{structjp}{Job}} *\mbox{\hyperlink{structjp}{jp}});}
+\DoxyCodeLine{61 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a366d68b969fbfef93998ca9fcad5d85c}{medMinJob}}(\mbox{\hyperlink{structjp}{Job}} *\mbox{\hyperlink{structjp}{jp}},\mbox{\hyperlink{structop}{Operation}} *\mbox{\hyperlink{structop}{op}});}
+\DoxyCodeLine{62 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a88f2fb24daf3927a9197b492da4d3e79}{medMaxJob}}(\mbox{\hyperlink{structjp}{Job}} *\mbox{\hyperlink{structjp}{jp}},\mbox{\hyperlink{structop}{Operation}} *\mbox{\hyperlink{structop}{op}});}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{comment}{//OPERAÇÔES}}
+\DoxyCodeLine{66 \mbox{\hyperlink{structop}{Operation}} *\mbox{\hyperlink{header_8h_adcf09cda3c50257b7077d18433a2a745}{inserirOperacoes}}(\mbox{\hyperlink{structop}{Operation}} *\mbox{\hyperlink{structop}{op}}, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{int} maq[\mbox{\hyperlink{header_8h_ab9c292ffc3422a0d77b525de858ee0ba}{MAXMAQUINAS}}], \textcolor{keywordtype}{int} temp[\mbox{\hyperlink{header_8h_ad246bdcf9a9f0000da4f6bc9b0e5d083}{MAXTEMPO}}],\textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{67 \mbox{\hyperlink{structop}{Operation}}* \mbox{\hyperlink{header_8h_ad6eae9df32ddf495f10d6cfcc63594e7}{procuraOperacoes}}(\mbox{\hyperlink{structop}{Operation}}* \mbox{\hyperlink{structop}{op}}, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{68 \mbox{\hyperlink{structop}{Operation}}* \mbox{\hyperlink{header_8h_af507c412bb7b833d6f425f262866da6d}{removerOperacoes}}(\mbox{\hyperlink{structop}{Operation}} *\mbox{\hyperlink{structop}{op}}, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{69 \mbox{\hyperlink{structop}{Operation}}* \mbox{\hyperlink{header_8h_a577b0a905474807f7fb7f806ef7cc041}{alteraOperacao}}(\mbox{\hyperlink{structop}{Operation}}* \mbox{\hyperlink{structop}{op}}, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id},\textcolor{keywordtype}{int}* maq,\textcolor{keywordtype}{int}* temp, \textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{70 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_af0c6e7e2112cd68030c5af966d24ea1d}{listarOperations}}(\mbox{\hyperlink{structop}{Operation}} *\mbox{\hyperlink{structop}{op}});}
+\DoxyCodeLine{71 \textcolor{keywordtype}{int} \mbox{\hyperlink{header_8h_a36022474b26e44d93748e57134c7ea65}{quantidadeOperacoes}}(\mbox{\hyperlink{structop}{Operation}} * \mbox{\hyperlink{structop}{op}});}
+\DoxyCodeLine{72 \textcolor{keywordtype}{int} \mbox{\hyperlink{header_8h_a71fb059c7d47340d448a67934f566078}{minOperacao}}(\mbox{\hyperlink{structop}{Operation}} *\mbox{\hyperlink{structop}{op}}, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{73 \textcolor{keywordtype}{int} \mbox{\hyperlink{header_8h_a2d9e1f3b498658338b9d4d7ee3143f0b}{maxOperacao}}(\mbox{\hyperlink{structop}{Operation}} *\mbox{\hyperlink{structop}{op}}, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{74 \textcolor{keywordtype}{int} \mbox{\hyperlink{header_8h_a838f352b8fd91e43b85d7b9e1442f8b0}{procuraOperacoesInt}}(\mbox{\hyperlink{structop}{Operation}}* \mbox{\hyperlink{structop}{op}}, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{comment}{//OUTROS}}
+\DoxyCodeLine{77 \textcolor{keywordtype}{int} \mbox{\hyperlink{header_8h_ae83fcdbeb2b6757fc741ae953b633ee1}{menu}}();}
+\DoxyCodeLine{78 \mbox{\hyperlink{structop}{Operation}}* \mbox{\hyperlink{header_8h_a93ddd18796445cca95c4a6976bf63cc4}{pullFicheiro}}(\mbox{\hyperlink{structop}{Operation}} *\mbox{\hyperlink{structop}{op}}, \textcolor{keywordtype}{int} idCont);}
+\DoxyCodeLine{79 \textcolor{keywordtype}{void} \mbox{\hyperlink{header_8h_a1a17507c61b40f255043c594f7386ad6}{saveFicheiro}}(\mbox{\hyperlink{structjp}{Job}} *\mbox{\hyperlink{structjp}{jp}},\mbox{\hyperlink{structop}{Operation}} *\mbox{\hyperlink{structop}{op}});}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
